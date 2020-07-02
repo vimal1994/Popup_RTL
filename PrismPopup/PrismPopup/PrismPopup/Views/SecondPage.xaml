@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismPopup.Views.SecondPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="English" Clicked="Button_Clicked_1"/>
+            <Button Text="Arabic" Clicked="Button_Clicked_2"/>
+            <Button Text="Navigate" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
