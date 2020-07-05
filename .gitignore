@@ -1,0 +1,13 @@
+obj
+bin
+Assemblies
+packages
+cireports
+DependentAssemblies
+.FxCopAnalysis.xml
+.StyleCopAnalysis.xml
+*.suo
+*.csproj.user
+Xamarin
+.vs
+*.vs
