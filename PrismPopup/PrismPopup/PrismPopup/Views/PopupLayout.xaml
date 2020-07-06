@@ -1,29 +1,39 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<popuplayout:SfPopupLayout
-    x:Class="PrismPopup.Views.BusyIndicatorControl"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:popuplayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
-    xmlns:header="clr-namespace:PrismPopup.Views"
-    x:Name="ctrlPopupLayout" >
+<popuplayout:SfPopupLayout x:Class="PrismPopup.Views.BusyIndicatorControl"
+                           xmlns="http://xamarin.com/schemas/2014/forms"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                           xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                           xmlns:header="clr-namespace:PrismPopup.Views"
+                           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                           xmlns:popuplayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+                           x:Name="ctrlPopupLayout">
     <popuplayout:SfPopupLayout.Resources>
         <ControlTemplate x:Key="contentTemp">
-        <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <BoxView Grid.Column="0" BackgroundColor="Blue"/>
-                <BoxView Grid.Column="1" BackgroundColor="Gray"/>
-                <BoxView Grid.Column="2" BackgroundColor="Yellow"/>
-        </Grid>
+                <BoxView Grid.Column="0" BackgroundColor="Blue" />
+                <Label Grid.Column="0"
+                       FontSize="24"
+                       Text="L" />
+
+                <BoxView Grid.Column="1" BackgroundColor="Gray" />
+                <Label Grid.Column="1"
+                       FontSize="24"
+                       Text="T" />
+
+                <BoxView Grid.Column="2" BackgroundColor="Yellow" />
+                <Label Grid.Column="2"
+                       FontSize="24"
+                       Text="R" />
+            </Grid>
         </ControlTemplate>
 
     </popuplayout:SfPopupLayout.Resources>
@@ -31,10 +41,12 @@
         <popuplayout:PopupView>
             <popuplayout:PopupView.HeaderTemplate>
                 <DataTemplate>
-                    <ContentView BackgroundColor="Red" Padding="5" ControlTemplate="{StaticResource contentTemp}"></ContentView>
+                    <ContentView Padding="5"
+                                 BackgroundColor="Red"
+                                 ControlTemplate="{StaticResource contentTemp}" />
                 </DataTemplate>
             </popuplayout:PopupView.HeaderTemplate>
-                <popuplayout:PopupView.ContentTemplate>
+            <popuplayout:PopupView.ContentTemplate>
                 <DataTemplate>
                     <!--<Grid>
                         <Grid.RowDefinitions>
@@ -47,14 +59,16 @@
                         <Label BackgroundColor="Red" Grid.Column="0"/>
                         <Label BackgroundColor="Green" Grid.Column="1"/>
                     </Grid>-->
-                    <ContentView BackgroundColor="Red" Padding="5" ControlTemplate="{StaticResource contentTemp}"></ContentView>
+                    <ContentView Padding="5"
+                                 BackgroundColor="Red"
+                                 ControlTemplate="{StaticResource contentTemp}" />
                 </DataTemplate>
             </popuplayout:PopupView.ContentTemplate>
         </popuplayout:PopupView>
     </popuplayout:SfPopupLayout.PopupView>
     <popuplayout:SfPopupLayout.Content>
         <StackLayout>
-            <Button Text="testing" Clicked="Button_Clicked"/>
+            <Button Clicked="Button_Clicked" Text="testing" />
         </StackLayout>
     </popuplayout:SfPopupLayout.Content>
 

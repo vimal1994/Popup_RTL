@@ -1,20 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="PrismPopup.Views.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PrismPopup.Views.MainPage"
+             xmlns:TemplatedView="clr-namespace:PrismPopup.Views.templates"
              xmlns:local1="clr-namespace:PrismPopup.ViewModels"
              xmlns:local2="clr-namespace:PrismPopup.Views"
-             xmlns:pop="clr-namespace:PrismPopup.Views"
-             xmlns:prism="http://prismlibrary.com"
              xmlns:popuplayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
-             Title="{Binding Title}"
-             x:Name="page">
+             xmlns:prism="http://prismlibrary.com"
+             x:Name="page"
+             Title="{Binding Title}">
 
-    <popuplayout:SfPopupLayout x:Name="popup">
-        
+    <Grid Margin="20,0" VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               BackgroundColor="Aquamarine"
+               FontSize="20"
+               Text="Click to test =&gt; "
+               VerticalOptions="Center" />
+
+        <TemplatedView:CultureChangePopup x:Name="popup"
+                                          Grid.Row="0"
+                                          Grid.Column="1"
+                                          Padding="5,5"
+                                          BackgroundColor="GreenYellow" />
+
+    </Grid>
+
+
+    <!--<popuplayout:SfPopupLayout x:Name="popup">
+
         <popuplayout:SfPopupLayout.Resources>
             <ControlTemplate x:Key="contentTemp">
-                <Grid >
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
@@ -24,9 +50,9 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <BoxView Grid.Column="0" BackgroundColor="Blue"/>
-                    <BoxView Grid.Column="1" BackgroundColor="Gray"/>
-                    <BoxView Grid.Column="2" BackgroundColor="Yellow"/>
+                    <BoxView Grid.Column="0" BackgroundColor="Blue" />
+                    <BoxView Grid.Column="1" BackgroundColor="Gray" />
+                    <BoxView Grid.Column="2" BackgroundColor="Yellow" />
                 </Grid>
             </ControlTemplate>
         </popuplayout:SfPopupLayout.Resources>
@@ -35,23 +61,16 @@
             <popuplayout:PopupView>
                 <popuplayout:PopupView.HeaderTemplate>
                     <DataTemplate x:Name="test">
-                        <ContentView BackgroundColor="Red" Padding="5" ControlTemplate="{StaticResource contentTemp}"></ContentView>
+                        <ContentView Padding="5"
+                                     BackgroundColor="Red"
+                                     ControlTemplate="{StaticResource contentTemp}" />
                     </DataTemplate>
                 </popuplayout:PopupView.HeaderTemplate>
                 <popuplayout:PopupView.ContentTemplate>
                     <DataTemplate>
-                        <!--<Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Label BackgroundColor="Red" Grid.Column="0"/>
-                        <Label BackgroundColor="Green" Grid.Column="1"/>
-                    </Grid>-->
-                        <ContentView BackgroundColor="Red" Padding="5" ControlTemplate="{StaticResource contentTemp}"></ContentView>
+                        <ContentView Padding="5"
+                                     BackgroundColor="Red"
+                                     ControlTemplate="{StaticResource contentTemp}" />
                     </DataTemplate>
                 </popuplayout:PopupView.ContentTemplate>
             </popuplayout:PopupView>
@@ -68,22 +87,32 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Clicked="Button_Clicked" Text="Navigate" HeightRequest="50" Grid.Column="1" Grid.Row="0"/>
-                <Label Text="ShowPopup" Grid.Column="1" Grid.Row="1">
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       BackgroundColor="Red" />
+                <Button x:Name="NavigateMenuButton"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="NavigateMenuButton_Clicked"
+                        HeightRequest="50"
+                        Text="Navigate to Menu" />
+
+
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       BackgroundColor="Yellow" />
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="ShowPopup">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label BackgroundColor="Red" Grid.Column="0" Grid.Row="0"/>
-                <Label BackgroundColor="Yellow" Grid.Column="0" Grid.Row="1"/>
+
             </Grid>
         </popuplayout:SfPopupLayout.Content>
-    </popuplayout:SfPopupLayout>
 
+    </popuplayout:SfPopupLayout>-->
 
-    <!--<StackLayout>
-     <Button Clicked="Button_Clicked" Text="Navigate" />
-    <pop:BusyIndicatorControl x:Name="popup" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-        </pop:BusyIndicatorControl>
-    </StackLayout>-->
 </ContentPage>
