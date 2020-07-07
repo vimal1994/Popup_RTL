@@ -16,6 +16,11 @@ namespace PrismPopup.Views.templates
     {
         public void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
+            //await Task.Delay(400);
+            //if (Application.Current.MainPage.Navigation.NavigationStack.Last() is MainPage)
+            //{
+            //    popup.Show();
+            //}
             popup.Show();            
         }
 

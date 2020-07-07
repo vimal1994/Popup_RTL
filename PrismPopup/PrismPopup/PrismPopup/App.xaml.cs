@@ -28,8 +28,9 @@ namespace PrismPopup
         {
             InitializeComponent();
             var cultureInfo = CultureInfo.GetCultureInfo("ar");
-          //  this.Culture = cultureInfo;
-            await NavigationService.NavigateAsync("NavigationPage/MenuPage");
+          //this.Culture = cultureInfo;
+          //await NavigationService.NavigateAsync("NavigationPage/MenuPage");
+            await NavigationService.NavigateAsync("PrismPopupMasterDetailPage/NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -39,7 +40,8 @@ namespace PrismPopup
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            
+            containerRegistry.RegisterForNavigation<PrismPopupMasterDetailPage, PrismPopupMasterDetailPageViewModel>();
+
         }
     }
 }
