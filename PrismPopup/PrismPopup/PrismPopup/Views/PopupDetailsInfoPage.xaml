@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PrismPopup.Views.PopupDetailsInfoPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeaderLabel"
+                   ApplyToDerivedTypes="False"
+                   TargetType="Label">
+                <Setter Property="BackgroundColor" Value="DarkGray" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="DetailLabel"
+                   ApplyToDerivedTypes="False"
+                   TargetType="Label">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid x:Name="CountryGrid"
+          ColumnSpacing="3"
+          RowSpacing="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="60" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Style="{StaticResource HeaderLabel}"
+               Text="Col-0" />
+
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Style="{StaticResource HeaderLabel}"
+               Text="Col-1" />
+
+        <Label Grid.Row="0"
+               Grid.Column="2"
+               Style="{StaticResource HeaderLabel}"
+               Text="Col-2" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Style="{StaticResource DetailLabel}"
+               Text="1" />
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Style="{StaticResource DetailLabel}"
+               Text="India" />
+
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Style="{StaticResource DetailLabel}"
+               Text="IN" />
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Style="{StaticResource DetailLabel}"
+               Text="2" />
+
+        <Label Grid.Row="2"
+               Grid.Column="1"
+               Style="{StaticResource DetailLabel}"
+               Text="United States" />
+
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Style="{StaticResource DetailLabel}"
+               Text="US" />
+
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Style="{StaticResource DetailLabel}"
+               Text="3" />
+
+        <Label Grid.Row="3"
+               Grid.Column="1"
+               Style="{StaticResource DetailLabel}"
+               Text="Canada" />
+
+        <Label Grid.Row="3"
+               Grid.Column="2"
+               Style="{StaticResource DetailLabel}"
+               Text="CN" />
+
+        <Label Grid.Row="4"
+               Grid.Column="0"
+               Style="{StaticResource DetailLabel}"
+               Text="4" />
+
+        <Label Grid.Row="4"
+               Grid.Column="1"
+               Style="{StaticResource DetailLabel}"
+               Text="United Kingdom" />
+
+        <Label Grid.Row="4"
+               Grid.Column="2"
+               Style="{StaticResource DetailLabel}"
+               Text="UK" />
+
+    </Grid>
+
+
+</ContentPage>

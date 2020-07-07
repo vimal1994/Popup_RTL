@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="PrismPopup.Views.templates.CultureChangePopup"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popuplayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             xmlns:prismNav="http://prismlibrary.com"
+             mc:Ignorable="d">
+    <ContentView.Resources />
+
+    <ContentView.Content>
+        <popuplayout:SfPopupLayout x:Name="popup">
+
+            <popuplayout:SfPopupLayout.Resources>
+                <ControlTemplate x:Key="contentTemp">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Column="0" BackgroundColor="Blue" />
+                        <BoxView Grid.Column="1" BackgroundColor="Gray" />
+                        <BoxView Grid.Column="2" BackgroundColor="Yellow" />
+                    </Grid>
+                </ControlTemplate>
+            </popuplayout:SfPopupLayout.Resources>
+
+            <popuplayout:SfPopupLayout.PopupView>
+                <popuplayout:PopupView>
+                    <popuplayout:PopupView.HeaderTemplate>
+                        <DataTemplate x:Name="test">
+                            <ContentView Padding="5"
+                                         BackgroundColor="Red"
+                                         ControlTemplate="{StaticResource contentTemp}" />
+                        </DataTemplate>
+                    </popuplayout:PopupView.HeaderTemplate>
+                    <popuplayout:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <ContentView Padding="5"
+                                         BackgroundColor="Red"
+                                         ControlTemplate="{StaticResource contentTemp}" />
+                        </DataTemplate>
+                    </popuplayout:PopupView.ContentTemplate>
+                </popuplayout:PopupView>
+            </popuplayout:SfPopupLayout.PopupView>
+
+            <popuplayout:SfPopupLayout.Content>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="PopupLayoutLabel"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           BackgroundColor="Tomato"
+                           FontSize="20"
+                           Text="Sf Popup">
+
+                        <Label.GestureRecognizers>
+                            <!--  Tap Gesture Recognizer - Single Click  -->
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+
+                            <!--  Tap Gesture Recognizer - Double Click  -->
+                            <TapGestureRecognizer Command="{prismNav:NavigateTo PopupDetailsInfoPage}" NumberOfTapsRequired="2">
+                                <TapGestureRecognizer.CommandParameter>
+                                    <prismNav:NavigationParameters>
+                                        <prismNav:NavigationParameter Key="Param1" Value="p1" />
+                                        <prismNav:NavigationParameter Key="Param2" Value="p2}" />
+                                    </prismNav:NavigationParameters>
+                                </TapGestureRecognizer.CommandParameter>
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+
+                </Grid>
+            </popuplayout:SfPopupLayout.Content>
+
+        </popuplayout:SfPopupLayout>
+    </ContentView.Content>
+</ContentView>
