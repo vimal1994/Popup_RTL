@@ -360,12 +360,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/PrismPopup/.mfractor
-/PrismPopup/.mfractor
-/PrismPopup/.mfractor
-/PrismPopup/PrismPopup/PrismPopup/bin/Debug/netstandard2.0
-/PrismPopup/PrismPopup/PrismPopup/obj
-/PrismPopup/PrismPopup/PrismPopup.Android/bin/Debug
-/PrismPopup/PrismPopup/PrismPopup.Android/obj
-/PrismPopup/PrismPopup/PrismPopup.iOS/bin/iPhoneSimulator/Debug
-/PrismPopup/PrismPopup/PrismPopup.iOS/obj

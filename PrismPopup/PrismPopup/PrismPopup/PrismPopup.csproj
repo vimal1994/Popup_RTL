@@ -5,38 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
-    <PackageReference Include="Prism.Forms" Version="7.2.0.1422" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.1.0.59" />
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.1.0.59" />
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1073" />
-    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.2" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Views\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\PopupDetailsInfoPage.xaml.cs">
-      <DependentUpon>PopupDetailsInfoPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\AppResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PopupDetailsInfoPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\PopupLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MenuPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\templates\CultureChangePopup.xaml">
+    <EmbeddedResource Update="Views\SecondPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

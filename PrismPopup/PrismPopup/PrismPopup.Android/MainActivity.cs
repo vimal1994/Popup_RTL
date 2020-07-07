@@ -6,13 +6,7 @@ using Prism.Ioc;
 
 namespace PrismPopup.Droid
 {
-    [Activity(
-        Label = "PrismPopup", 
-        Icon = "@mipmap/ic_launcher", 
-        Theme = "@style/MainTheme", 
-        MainLauncher = true, 
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.Locale | ConfigChanges.LayoutDirection
-    )]
+    [Activity(Label = "PrismPopup", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
