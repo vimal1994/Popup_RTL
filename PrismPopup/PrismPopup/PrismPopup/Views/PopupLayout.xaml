@@ -48,17 +48,6 @@
             </popuplayout:PopupView.HeaderTemplate>
             <popuplayout:PopupView.ContentTemplate>
                 <DataTemplate>
-                    <!--<Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Label BackgroundColor="Red" Grid.Column="0"/>
-                        <Label BackgroundColor="Green" Grid.Column="1"/>
-                    </Grid>-->
                     <ContentView Padding="5"
                                  BackgroundColor="Red"
                                  ControlTemplate="{StaticResource contentTemp}" />
